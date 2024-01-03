@@ -1,10 +1,11 @@
-import { titleFont } from '@/configs/fonts'
-//import Image from 'next/image'
+import { ProductsGrid, Title } from "@/components";
 
 export default function Home() {
   return (
-    <div className="">
-      <h1 className={`${titleFont.className} font-bold`}>Hola mundo</h1>
-    </div>
+    <>
+      <Title title="Tienda" subtitle="Todos los productos" className="mb-2" />
+      {/* TODO: suspense */}
+      <ProductsGrid />
+    </>
   )
 }
