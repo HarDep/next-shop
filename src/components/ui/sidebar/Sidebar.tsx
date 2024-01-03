@@ -1,15 +1,36 @@
+'use client'
+import { useUIStore } from "@/store"
 import Link from "next/link"
+import clsx from 'clsx';
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from "react-icons/io5"
 
 export const Sidebar = () => {
+    const isSideMenuOpened = useUIStore(store => store.isSideMenuOpened);
+    const closeSideMenu = useUIStore(store => store.closeSideMenu);
     return (
         <div>
-            <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
-            <div className="fade-in fixed top-0 left-0 w-screen h-screen backdrop-filter backdrop-blur-sm" />
+            {
+                isSideMenuOpened && (
+                    <div onClick={closeSideMenu}
+                        className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
+                )
+            }
+            {
+                isSideMenuOpened && (
+                    <div onClick={closeSideMenu}
+                        className="fade-in fixed top-0 left-0 w-screen h-screen backdrop-filter backdrop-blur-sm" />
+                )
+            }
             <nav
-                //todo: efecto slide 
-                className="fixed p-5 right-0 top-0 w-4/5 sm:w-1/3 h-screen bg-white z-20 shadow-2xl transform transition-all duration-300">
-                <IoCloseOutline size={30} className='absolute top-5 right-5 cursor-pointer' />
+                className={
+                    clsx(
+                        'fixed p-5 right-0 top-0 w-4/5 sm:w-1/3 h-screen bg-white z-20 shadow-2xl transform transition-all duration-200',
+                        {
+                            'translate-x-full': !isSideMenuOpened,
+                        }
+                    )
+                }>
+                <IoCloseOutline size={30} className='absolute top-5 right-5 cursor-pointer' onClick={closeSideMenu} />
                 <div className="block sm:hidden relative mt-14">
                     <IoSearchOutline size={20} className='absolute top-2 left-2' />
                     <input type="text" placeholder="Buscar"
