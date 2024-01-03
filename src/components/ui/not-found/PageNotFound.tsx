@@ -2,15 +2,15 @@ import { titleFont } from "@/configs/fonts";
 import Image from "next/image";
 import Link from "next/link";
 
-export const PageNotFound = () => {
+export const PageNotFound = ({ message, optionText, linkText, link }: { message: string, optionText: string, linkText: string, link: string }) => {
     return (
         <div className="flex flex-col-reverse md:flex-row h-[800px] w-full justify-center items-center align-middle">
             <div className="text-center px-5 mx-5">
                 <h2 className={`${titleFont.className} antialiased text-9xl`} >404</h2>
-                <p className="font-semibold text-xl">Whoops! pagina no encontrada.</p>
+                <p className="font-semibold text-xl">Whoops! {message}.</p>
                 <p className="font-light">
-                    <span>Puedes Regresar al </span>
-                    <Link href={'/'} className="font-normal hover:underline transition-all">Inicio</Link>
+                    <span>Puedes {optionText} </span>
+                    <Link href={link} className="font-normal hover:underline transition-all">{linkText}</Link>
                 </p>
             </div>
             <div className="px-5 mx-5">

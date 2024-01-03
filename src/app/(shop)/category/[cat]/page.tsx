@@ -1,14 +1,28 @@
 //import { ValidGenders } from "@/libs/definitions";
 import { notFound } from "next/navigation";
 
-export default function Page({ params }: { params: { cat: string } }) {
+import { ProductsGrid, Title } from "@/components"
+import { Gender } from "@/libs/definitions";
+import { Suspense } from "react";
+
+export default function Page({ params }: { params: { cat: Gender } }) {
+    const labels: Record<Gender, string> = {
+        'men': 'Hombres',
+        'women': 'Mujeres',
+        'kid': 'Niños',
+        'unisex': 'Todos',
+    }
     const { cat } = params;
-    if (cat === 'kids') {
+    if (!labels[cat]) {
         notFound();
     }
     return (
-        <div>
-            <h1>Category con {cat}</h1>
-        </div>
+        <>
+            <Title title={`Articulos para ${labels[cat]}`} subtitle={`Productos para ${labels[cat]}`} className="mb-2" />
+            {/* TODO: products skeleton */}
+            <Suspense fallback={<div>Cargando</div>}>
+                <ProductsGrid category={cat} />
+            </Suspense>
+        </>
     )
 }
