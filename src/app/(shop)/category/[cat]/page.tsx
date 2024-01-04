@@ -17,12 +17,12 @@ export default function Page({ params }: { params: { cat: Gender } }) {
         notFound();
     }
     return (
-        <>
+        <div className="px-2">
             <Title title={`Articulos para ${labels[cat]}`} subtitle={`Productos para ${labels[cat]}`} className="mb-2" />
             {/* TODO: products skeleton */}
             <Suspense fallback={<div>Cargando</div>}>
                 <ProductsGrid category={cat} />
             </Suspense>
-        </>
+        </div>
     )
 }

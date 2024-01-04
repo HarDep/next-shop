@@ -17,3 +17,9 @@ export async function fetchProductsByCategory(category: string) {
     const products = initialData.products.filter(product => product.gender === category);
     return products;
 }
+
+export async function fetchProduct(slug: string) {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const product = initialData.products.find(product => product.slug === slug);
+    return product;
+}
