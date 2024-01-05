@@ -1,4 +1,4 @@
-import { QuantitySelectorList, Title } from "@/components";
+import { Title } from "@/components";
 import { initialData } from "@/libs/placeholder-data";
 import Link from "next/link";
 import Image from "next/image";
