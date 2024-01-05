@@ -40,7 +40,7 @@ export default function Page() {
                                         {/* talla seleccionada */}
                                         <p>{product.sizes[0]}</p>
                                         <QuantitySelectorList quatitySelected={2} maxQuantity={product.inStock} />
-                                        <button className="ml-7 underline mt-3">Remover</button>
+                                        <button className="ml-7 underline mt-3 hover:text-gray-500">Remover</button>
                                     </div>
                                 </div>
                             ))
