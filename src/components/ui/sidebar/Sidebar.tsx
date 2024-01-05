@@ -24,7 +24,7 @@ export const Sidebar = () => {
             <nav
                 className={
                     clsx(
-                        'fixed p-5 right-0 top-0 w-4/5 sm:w-1/3 h-screen bg-white z-20 shadow-2xl transform transition-all duration-200',
+                        'overflow-y-scroll fixed p-5 right-0 top-0 w-4/5 sm:w-1/3 h-screen bg-white z-20 shadow-2xl transform transition-all duration-200',
                         {
                             'translate-x-full': !isSideMenuOpened,
                         }
@@ -36,30 +36,42 @@ export const Sidebar = () => {
                     <input type="text" placeholder="Buscar"
                         className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border text-xl border-gray-200 focus:outline-none focus:border-gray-500" />
                 </div>
-                <Link href={'/'} className="flex items-center mt-7 p-2 hover:bg-gray-100 rounded transition-all">
+
+                {/* TODO: Al tocar cualquier opcion se debe quitar el sidebar */}
+
+                <Link className="block sm:hidden mt-7 p-2 rounded-md transition-all hover:bg-gray-100"
+                    href='/category/men'>Hombres</Link>
+                <Link className="block sm:hidden mt-4 p-2 rounded-md transition-all hover:bg-gray-100"
+                    href='/category/women'>Mujeres</Link>
+                <Link className="block sm:hidden mt-4 p-2 rounded-md transition-all hover:bg-gray-100"
+                    href='/category/kid'>Niños</Link>
+
+                <div className="block sm:hidden w-full h-px bg-gray-200 my-8" />
+
+                <Link href={'/'} className="flex items-center mt-4 sm:mt-7 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoPersonOutline size={20} />
                     <span className="ml-3 text-xl">Perfil</span>
                 </Link>
-                <Link href={'/'} className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all">
+                <Link href={'/'} className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoLogInOutline size={20} />
                     <span className="ml-3 text-xl">Ingresar</span>
                 </Link>
-                <Link href={'/'} className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all">
+                <Link href={'/'} className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoLogOutOutline size={20} />
                     <span className="ml-3 text-xl">Cerrar sesion</span>
                 </Link>
 
-                <div className="w-full h-px bg-gray-200 my-10" />
+                <div className="w-full h-px bg-gray-200 my-8" />
 
-                <Link href={'/'} className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all">
+                <Link href={'/'} className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoShirtOutline size={20} />
                     <span className="ml-3 text-xl">Productos</span>
                 </Link>
-                <Link href={'/'} className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all">
+                <Link href={'/'} className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoTicketOutline size={20} />
                     <span className="ml-3 text-xl">Ordenes</span>
                 </Link>
-                <Link href={'/'} className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all">
+                <Link href={'/'} className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all">
                     <IoPeopleOutline size={20} />
                     <span className="ml-3 text-xl">Usuarios</span>
                 </Link>
