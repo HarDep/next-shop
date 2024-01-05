@@ -2,7 +2,7 @@ import { Title } from '@/components';
 
 import Link from 'next/link';
 import { IoCardOutline } from 'react-icons/io5';
-
+//TODO: cambiar para visualizacion en pantallas pequeñas
 export default function () {
     return (
       <>

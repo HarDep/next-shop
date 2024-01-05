@@ -2,15 +2,20 @@ import { QuantitySelectorList, Title } from "@/components";
 import { initialData } from "@/libs/placeholder-data";
 import Link from "next/link";
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import { Product } from "@/libs/definitions";
 
 //por ahora carito:
-const carrito = [
+const carrito: Product[] = [
     initialData.products[0],
     initialData.products[1],
     initialData.products[2],
 ];
 
 export default function Page() {
+    if (carrito.length == 0) {
+        redirect('/empty');
+    }
     return (
         <div className="flex justify-center items-center mb-72">
             <div className="flex flex-col w-11/12 md:w-3/4">
