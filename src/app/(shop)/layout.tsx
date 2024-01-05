@@ -5,7 +5,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
         <main className="min-h-screen">
             <TopMenu />
             <Sidebar />
-            <div className="sm:px-10">
+            <div className="md:px-10">
                 {children}
             </div>
         </main>

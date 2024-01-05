@@ -7,19 +7,19 @@ import { ButtonOpenMenu } from "./ButtonOpenMenu";
 
 export const TopMenu = () => {
     return (
-        <nav className="flex px-5 justify-between items-center w-full">
-            <div>
+        <nav className="grid grid-cols-1 sm:grid-cols-3 px-5 content-start w-full">
+            <div className="flex items-center pt-4 sm:pt-0">
                 <Link href='/'>
                     <span className={`${titleFont.className} antialiased font-bold`}>App</span>
                     <span> | Shop</span>
                 </Link>
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden sm:flex items-center justify-self-center">
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href='/category/men'>Hombres</Link>
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href='/category/women'>Mujeres</Link>
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href='/category/kid'>Niños</Link>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center justify-self-start sm:justify-self-end">
                 <Link href={'/search'} className="mx-2">
                     <IoSearchOutline className='w-5 h-5' />
                 </Link>
