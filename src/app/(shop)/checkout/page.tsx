@@ -41,7 +41,7 @@ export default function Page() {
                         }
                     </div>
 
-                    <div className="bg-white rounded-xl shadow-xl p-7">
+                    <div className="bg-white rounded-xl shadow-xl p-7 h-fit">
                         <h2 className="text-2xl mb-2">Direccion de entrega</h2>
                         <div className="grid grid-cols-2 mb-5">
                             <span className="mb-1 font-bold text-xl">Pepito perez</span>

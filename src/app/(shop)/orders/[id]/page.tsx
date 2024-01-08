@@ -1,6 +1,5 @@
 import { Title } from "@/components";
 import { initialData } from "@/libs/placeholder-data";
-import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import { IoCardOutline } from "react-icons/io5";
@@ -10,6 +9,7 @@ const carrito = [
     initialData.products[0],
     initialData.products[1],
     initialData.products[2],
+    initialData.products[3],
 ];
 
 interface Props {
@@ -64,7 +64,7 @@ export default function Page({ params }: Props) {
                         }
                     </div>
 
-                    <div className="bg-white rounded-xl shadow-xl p-7">
+                    <div className="bg-white rounded-xl shadow-xl p-7 h-fit">
                         <h2 className="text-2xl mb-2">Direccion de entrega</h2>
                         <div className="grid grid-cols-2 mb-5">
                             <span className="mb-1 font-bold text-xl">Pepito perez</span>
